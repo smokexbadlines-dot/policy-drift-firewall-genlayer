@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "createdUtc": "2026-10-13T18:21:13.2249939Z",
   "contractSha256": "3be5122d91ee2bb0447064d354d123c3bb8e3679f0dd8c41a4fd9f021f096b9f",
-  "frontendBundleSha256": "387725bfe264fb404d5af2a3f27d1966052bca2e4f1e473ce344e3a468db36da",
+  "frontendBundleSha256": "fcda5e262a2a2aa22494ce4907611db7a990f015ad84587430be6dc108c2cb2c",
   "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
   "sdk": "genlayer-js 1.1.8",
   "checks": {
@@ -21,7 +21,7 @@
     "liveInconclusive": "PASS",
     "proofVerifier": "PASS",
     "publicFrontend": "PASS",
-    "publicWalletConnection": "BLOCKED_METAMASK_MALICIOUS_SITE_WARNING",
+    "publicWalletConnection": "PASS_VERCEL_NO_WARNING_USER_CONFIRMED",
     "publicRepository": "PASS"
   },
   "deployment": {
@@ -62,10 +62,12 @@
     "https://raw.githubusercontent.com/ethereum/EIPs/b57b7e83fd92e4b6862bea447ee4b86db5c1f034/EIPS/eip-1.md",
     "https://raw.githubusercontent.com/ethereum/EIPs/60e2285dae7fcb7eda7befa32577085fdceb2255/EIPS/eip-1.md"
   ],
-  "updatedUtc": "2026-10-14T06:44:36.557Z",
-  "frontend": "https://smokexbadlines-dot.github.io/policy-drift-firewall-genlayer/",
+  "updatedUtc": "2026-10-14T09:56:55.443Z",
+  "frontend": "https://policy-drift-firewall-genlayer.vercel.app/",
+  "githubPagesMirror": "https://smokexbadlines-dot.github.io/policy-drift-firewall-genlayer/",
+  "vercelDeployment": "https://policy-drift-firewall-genlayer-r5sf5la2d-smokexbadlines-1622.vercel.app/",
   "repository": "https://github.com/smokexbadlines-dot/policy-drift-firewall-genlayer",
-  "sourceCommit": "dacf5d2efa71df88e2ed9cde51210800167b507c",
+  "sourceCommit": "ab39990f4796365be141398b0e0392b941912202",
   "pagesBuildCommit": "b17e9ce6c86e0e4bb4496c4fed2dfece650c7910",
   "pagesPublishingSource": "gh-pages:/"
 }

@@ -38,7 +38,7 @@ manifest.evidenceUrls = [...new Set(proof.finalizedState.clauses.flatMap(clause 
   'https://raw.githubusercontent.com/ethereum/EIPs/60e2285dae7fcb7eda7befa32577085fdceb2255/EIPS/eip-1.md',
 ]))];
 manifest.deployment.proof = 'proof/studionet-live.json';
-manifest.frontend = 'https://smokexbadlines-dot.github.io/policy-drift-firewall-genlayer/';
+manifest.frontend = 'https://policy-drift-firewall-genlayer.vercel.app/';
 manifest.repository = 'https://github.com/smokexbadlines-dot/policy-drift-firewall-genlayer';
 manifest.updatedUtc = new Date().toISOString();
 writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);

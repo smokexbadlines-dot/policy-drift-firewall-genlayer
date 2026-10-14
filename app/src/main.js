@@ -22,6 +22,7 @@ const demo = {
   },
 };
 const raw = sha => `https://raw.githubusercontent.com/ethereum/EIPs/${sha}/EIPS/eip-1.md`;
+const assetBase = import.meta.env.BASE_URL;
 const studionetDemoAddress = '0xa02c1e164D8ce654f6f1F3f33Cb6061E75564a9F';
 const storedNetwork = localStorage.getItem('pdf-network');
 let network = networks[storedNetwork] ? storedNetwork : 'studionet';
@@ -77,7 +78,7 @@ function page() {
         <div class="hero-copy"><div class="eyebrow"><span class="pulse"></span> PUBLIC POLICY · PRIVATE AGREEMENT</div>
           <h1>When a rule changes,<br><em>your agreement knows.</em></h1>
           <p>Bind a two-party commitment to a versioned public clause. Validators read both versions and judge whether a revision changes the rule. Code handles the rest: editorial updates advance; material updates pause the affected commitment until both parties consent.</p>
-          <div class="hero-links"><a href="/contract.py" download>Download contract source ↗</a><a href="https://docs.genlayer.com/developers/intelligent-contracts/first-contract" target="_blank" rel="noreferrer">How GenLayer contracts work ↗</a></div>
+          <div class="hero-links"><a href="${assetBase}contract.py" download>Download contract source ↗</a><a href="https://docs.genlayer.com/developers/intelligent-contracts/first-contract" target="_blank" rel="noreferrer">How GenLayer contracts work ↗</a></div>
         </div>
         <div class="flow-card"><div class="flow-head"><span>01 / VERSION CONTROL</span><span class="live">DEMO BUILD</span></div>
           <div class="flow-item"><i>01</i><div><strong>Freeze the source</strong><small>Pinned GitHub commit + exact section markers</small></div></div>
@@ -198,7 +199,7 @@ async function write(functionName, args) {
 
 async function deploy() {
   if (!account) await connectWallet();
-  const response = await fetch('/contract.py');
+  const response = await fetch(`${assetBase}contract.py`);
   if (!response.ok) throw new Error('Contract source could not be loaded.');
   const hash = await getClient().deployContract({ code: await response.text(), args: [] });
   record(hash, 'deploy contract');
@@ -295,7 +296,7 @@ function bind() {
 }
 
 page();
-fetch('/proof.json').then(response => response.ok ? response.json() : null).then(value => { proof = value; renderProof(); }).catch(() => {
+fetch(`${assetBase}proof.json`).then(response => response.ok ? response.json() : null).then(value => { proof = value; renderProof(); }).catch(() => {
   document.querySelector('#proof').innerHTML = '<div class="empty">Recorded proof could not be loaded. Live state remains available above.</div>';
 });
 window.ethereum?.on?.('accountsChanged', () => {

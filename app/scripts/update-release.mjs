@@ -29,6 +29,7 @@ manifest.checks = {
   liveInconclusive: 'PASS',
   proofVerifier: 'PASS',
   publicFrontend: manifest.checks?.publicFrontend ?? 'PENDING_PUBLIC_ACCESS',
+  publicWalletConnection: manifest.checks?.publicWalletConnection ?? 'PENDING_METAMASK_REVIEW',
   publicRepository: manifest.checks?.publicRepository ?? 'PENDING_SOURCE_PUSH',
 };
 manifest.liveTransactions = proof.transactions.map(tx => tx.hash);
@@ -37,7 +38,7 @@ manifest.evidenceUrls = [...new Set(proof.finalizedState.clauses.flatMap(clause 
   'https://raw.githubusercontent.com/ethereum/EIPs/60e2285dae7fcb7eda7befa32577085fdceb2255/EIPS/eip-1.md',
 ]))];
 manifest.deployment.proof = 'proof/studionet-live.json';
-manifest.frontend = 'https://policy-drift-firewall-genlayer.opalfairy1.chatgpt.site';
+manifest.frontend = 'https://smokexbadlines-dot.github.io/policy-drift-firewall-genlayer/';
 manifest.repository = 'https://github.com/smokexbadlines-dot/policy-drift-firewall-genlayer';
 manifest.updatedUtc = new Date().toISOString();
 writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);

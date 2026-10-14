@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "createdUtc": "2026-10-13T18:21:13.2249939Z",
   "contractSha256": "3be5122d91ee2bb0447064d354d123c3bb8e3679f0dd8c41a4fd9f021f096b9f",
-  "frontendBundleSha256": "8a69fe566a37d42271f1ff8a2ed7f8a39da125693b926adb57fe66998109fa75",
+  "frontendBundleSha256": "387725bfe264fb404d5af2a3f27d1966052bca2e4f1e473ce344e3a468db36da",
   "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
   "sdk": "genlayer-js 1.1.8",
   "checks": {
@@ -21,6 +21,7 @@
     "liveInconclusive": "PASS",
     "proofVerifier": "PASS",
     "publicFrontend": "PASS",
+    "publicWalletConnection": "BLOCKED_METAMASK_MALICIOUS_SITE_WARNING",
     "publicRepository": "PASS"
   },
   "deployment": {
@@ -62,9 +63,9 @@
     "https://raw.githubusercontent.com/ethereum/EIPs/60e2285dae7fcb7eda7befa32577085fdceb2255/EIPS/eip-1.md"
   ],
   "updatedUtc": "2026-10-14T06:44:36.557Z",
-  "frontend": "https://policy-drift-firewall-genlayer.opalfairy1.chatgpt.site",
+  "frontend": "https://smokexbadlines-dot.github.io/policy-drift-firewall-genlayer/",
   "repository": "https://github.com/smokexbadlines-dot/policy-drift-firewall-genlayer",
   "sourceCommit": "dacf5d2efa71df88e2ed9cde51210800167b507c",
-  "siteSourceCommit": "b6a3c0cd632fb26819d38c2fe49c9f53a97b617e",
-  "siteVersionId": "appgprj_6ace82f2dfb081919691b34bcde8f725~appgver_d26fb5205644819194e2d66b27b91eb3"
+  "pagesBuildCommit": "b17e9ce6c86e0e4bb4496c4fed2dfece650c7910",
+  "pagesPublishingSource": "gh-pages:/"
 }

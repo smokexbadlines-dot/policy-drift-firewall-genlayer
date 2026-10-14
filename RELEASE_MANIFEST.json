@@ -63,5 +63,8 @@
   ],
   "updatedUtc": "2026-10-14T06:44:36.557Z",
   "frontend": "https://policy-drift-firewall-genlayer.opalfairy1.chatgpt.site",
-  "repository": "https://github.com/smokexbadlines-dot/policy-drift-firewall-genlayer"
+  "repository": "https://github.com/smokexbadlines-dot/policy-drift-firewall-genlayer",
+  "sourceCommit": "dacf5d2efa71df88e2ed9cde51210800167b507c",
+  "siteSourceCommit": "b6a3c0cd632fb26819d38c2fe49c9f53a97b617e",
+  "siteVersionId": "appgprj_6ace82f2dfb081919691b34bcde8f725~appgver_d26fb5205644819194e2d66b27b91eb3"
 }

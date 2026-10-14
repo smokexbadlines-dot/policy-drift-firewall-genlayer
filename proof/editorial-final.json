@@ -1,0 +1,86 @@
+{
+  "network": "studionet",
+  "contract": "0xa02c1e164D8ce654f6f1F3f33Cb6061E75564a9F",
+  "expectedContractSha256": "3be5122d91ee2bb0447064d354d123c3bb8e3679f0dd8c41a4fd9f021f096b9f",
+  "transactions": [
+    {
+      "hash": "0x2942c41bf5bd829126fb1d1d23d05bef245e120ec30662f6ea9138a236d31d5d",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "contractAddress": "0xa02c1e164D8ce654f6f1F3f33Cb6061E75564a9F",
+      "deployedContractSha256": "3be5122d91ee2bb0447064d354d123c3bb8e3679f0dd8c41a4fd9f021f096b9f",
+      "votes": {
+        "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
+        "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "agree",
+        "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
+        "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "agree",
+        "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8": "idle"
+      },
+      "round": null
+    },
+    {
+      "hash": "0xfa8b97dbaf18ac860275638f5370326258a07df4315fae2651ea2752d7164d48",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "contractAddress": null,
+      "deployedContractSha256": null,
+      "votes": {
+        "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100": "idle",
+        "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
+        "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "agree",
+        "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "agree",
+        "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8": "idle"
+      },
+      "round": null
+    },
+    {
+      "hash": "0x1c3e452bf08beb0cfff43f7ca05f71117e31331a51fdced9f641a80b42d3c215",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "contractAddress": null,
+      "deployedContractSha256": null,
+      "votes": {
+        "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "idle",
+        "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47": "idle",
+        "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84": "agree",
+        "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "agree",
+        "0xE6BD8050758CB15fC88387223E31Ae2708B119dC": "agree"
+      },
+      "round": null
+    },
+    {
+      "hash": "0x8296535393190d237a552342df398f483076cb78bc6b9890cc27dc717d357071",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "contractAddress": null,
+      "deployedContractSha256": null,
+      "votes": {
+        "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47": "idle",
+        "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "agree",
+        "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "agree",
+        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "agree",
+        "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8": "idle"
+      },
+      "round": null
+    }
+  ],
+  "finalizedState": {
+    "clauses": [
+      {
+        "digest": "2a3ea041b9f3173328dded10a1a7a2e6bacc55c1e53f92d3b337afb20a919bcb",
+        "id": "discussion-link-rule",
+        "lastNewDigest": "2a3ea041b9f3173328dded10a1a7a2e6bacc55c1e53f92d3b337afb20a919bcb",
+        "lastOldDigest": "79347ba0b649218e9239463b6e0088b477dcfc02ffa8d1d2822d509d047cdd34",
+        "lastVerdict": "EDITORIAL",
+        "pendingDeadline": 0,
+        "pendingState": "",
+        "pendingUrl": "",
+        "url": "https://raw.githubusercontent.com/ethereum/EIPs/36507828d1449d1265dd88730fb61fe2b3eb0cb8/EIPS/eip-1.md",
+        "version": 2
+      }
+    ],
+    "commitments": [],
+    "steward": "0x106E2A74C9233e1981b0B5692355163A825F4422"
+  },
+  "verifiedAt": "2026-10-13T18:51:46.352Z"
+}

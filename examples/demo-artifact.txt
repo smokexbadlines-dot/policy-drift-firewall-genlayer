@@ -1,0 +1,4 @@
+Policy Drift Firewall demonstration artifact
+
+This is an example file for exercising a version-bound, single-use commitment.
+It is not a live policy decision or proof of a real-world entitlement.

@@ -1,0 +1,19 @@
+{
+  "name": "policy-drift-firewall-app",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "node scripts/copy-contract.mjs && node scripts/copy-proof.mjs && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "verify": "node scripts/verify.mjs",
+    "verify:proof": "node scripts/verify-proof.mjs"
+  },
+  "dependencies": {
+    "genlayer-js": "1.1.8"
+  },
+  "devDependencies": {
+    "vite": "^7.3.0"
+  }
+}

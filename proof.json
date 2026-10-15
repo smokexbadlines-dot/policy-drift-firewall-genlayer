@@ -1,327 +1,217 @@
 {
+  "proofVersion": 2,
   "network": "studionet",
-  "contract": "0xa02c1e164D8ce654f6f1F3f33Cb6061E75564a9F",
-  "expectedContractSha256": "3be5122d91ee2bb0447064d354d123c3bb8e3679f0dd8c41a4fd9f021f096b9f",
+  "contract": "0x827B9F7aE69D78CA083d6B5195AA5323AB03dAf5",
+  "sourceCommit": "8781978ada97d9e20726f1d52af96e63ae0c9e43",
+  "expectedContractSha256": "00bde2fa27b6dba0ca667d6eb7f77308c7a70b767586e5e4b19abf78fd3a1d4f",
   "transactions": [
     {
-      "hash": "0x2942c41bf5bd829126fb1d1d23d05bef245e120ec30662f6ea9138a236d31d5d",
+      "hash": "0xbe6d229cd270582a57738f5f4ba5a61931154cd0fdb8e076484234e15dd47fa1",
       "status": "FINALIZED",
       "execution": "FINISHED_WITH_RETURN",
-      "contractAddress": "0xa02c1e164D8ce654f6f1F3f33Cb6061E75564a9F",
-      "deployedContractSha256": "3be5122d91ee2bb0447064d354d123c3bb8e3679f0dd8c41a4fd9f021f096b9f",
+      "label": "Deploy corrected contract",
+      "contractAddress": "0x827B9F7aE69D78CA083d6B5195AA5323AB03dAf5",
+      "deployedContractSha256": "00bde2fa27b6dba0ca667d6eb7f77308c7a70b767586e5e4b19abf78fd3a1d4f",
       "votes": {
-        "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
-        "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "agree",
         "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
-        "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "agree",
-        "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8": "idle"
+        "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84": "idle",
+        "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree",
+        "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "agree",
+        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "idle"
       },
-      "round": null,
-      "label": "Deploy contract"
+      "round": null
     },
     {
-      "hash": "0xfa8b97dbaf18ac860275638f5370326258a07df4315fae2651ea2752d7164d48",
+      "hash": "0xd4032e71abe81dfa42ef4f8c7e5ef013a2d9691fea9b87a785bd9254d29bd154",
       "status": "FINALIZED",
       "execution": "FINISHED_WITH_RETURN",
+      "label": "Register editorial clause",
+      "contractAddress": null,
+      "deployedContractSha256": null,
+      "votes": {
+        "0x3E5ee2507cc167C9925Bf10c67D7986581112024": "agree",
+        "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47": "idle",
+        "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC": "agree",
+        "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
+        "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "idle"
+      },
+      "round": null
+    },
+    {
+      "hash": "0x3770513063c16dbc6c483911145eb84f8b7176311a5f34afc86ed7d90b7c016d",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "label": "Open editorial commitment #0: PENDING v1",
       "contractAddress": null,
       "deployedContractSha256": null,
       "votes": {
         "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100": "idle",
         "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
-        "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "agree",
-        "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "agree",
-        "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8": "idle"
-      },
-      "round": null,
-      "label": "Register editorial clause"
-    },
-    {
-      "hash": "0x1c3e452bf08beb0cfff43f7ca05f71117e31331a51fdced9f641a80b42d3c215",
-      "status": "FINALIZED",
-      "execution": "FINISHED_WITH_RETURN",
-      "contractAddress": null,
-      "deployedContractSha256": null,
-      "votes": {
-        "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "idle",
-        "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47": "idle",
-        "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84": "agree",
-        "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "agree",
-        "0xE6BD8050758CB15fC88387223E31Ae2708B119dC": "agree"
-      },
-      "round": null,
-      "label": "Propose editorial revision"
-    },
-    {
-      "hash": "0x8296535393190d237a552342df398f483076cb78bc6b9890cc27dc717d357071",
-      "status": "FINALIZED",
-      "execution": "FINISHED_WITH_RETURN",
-      "contractAddress": null,
-      "deployedContractSha256": null,
-      "votes": {
-        "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47": "idle",
         "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "agree",
-        "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "agree",
-        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "agree",
-        "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8": "idle"
+        "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "idle",
+        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "agree"
       },
-      "round": null,
-      "label": "Assess editorial revision"
+      "round": null
     },
     {
-      "hash": "0xa2fd8a5f83049a201b24c2db5958747ee8eb15c99db52fe8f31c373396c7b127",
+      "hash": "0xcca556bc09d21cf362c9c301bf1bca694ea89c33ad971c5b49ace395222b9df8",
       "status": "FINALIZED",
       "execution": "FINISHED_WITH_RETURN",
+      "label": "Propose editorial revision",
       "contractAddress": null,
       "deployedContractSha256": null,
       "votes": {
-        "0x3E5ee2507cc167C9925Bf10c67D7986581112024": "agree",
-        "0x4404Fb70d490c935758146f42A73DC850FF95C71": "idle",
+        "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "idle",
+        "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
+        "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "agree",
+        "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree",
+        "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d": "idle"
+      },
+      "round": null
+    },
+    {
+      "hash": "0x7a2c7913d2adc5c93b83fdb8898a0b9efaa9e5a79efde5eeb4667efeb2dc3067",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "label": "Assess EDITORIAL: pending #0 rebound to v2",
+      "contractAddress": null,
+      "deployedContractSha256": null,
+      "votes": {
         "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC": "idle",
-        "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "agree",
-        "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658": "agree"
-      },
-      "round": null,
-      "label": "Register material clause"
-    },
-    {
-      "hash": "0x21964b7abae61e0fbd63b410af174f3a67f9dca55143924abe6bf592c54be53c",
-      "status": "FINALIZED",
-      "execution": "FINISHED_WITH_RETURN",
-      "contractAddress": null,
-      "deployedContractSha256": null,
-      "votes": {
-        "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100": "agree",
-        "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47": "idle",
         "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "agree",
-        "0xE6BD8050758CB15fC88387223E31Ae2708B119dC": "agree",
-        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "idle"
+        "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84": "agree",
+        "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d": "idle",
+        "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "agree"
       },
-      "round": null,
-      "label": "Propose material revision"
+      "round": null
     },
     {
-      "hash": "0x4fe3f1e03652337533527663b1450ce6d7dcab677479726099d8a09f0b1d8ee9",
+      "hash": "0xf1e1c3e44560f166f3fee452566b24ff1b905e5970a5d8ee59ed92fb90954438",
       "status": "FINALIZED",
       "execution": "FINISHED_WITH_RETURN",
-      "contractAddress": null,
-      "deployedContractSha256": null,
-      "votes": {
-        "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "agree",
-        "0x3E5ee2507cc167C9925Bf10c67D7986581112024": "agree",
-        "0x4404Fb70d490c935758146f42A73DC850FF95C71": "idle",
-        "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "agree",
-        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "idle"
-      },
-      "round": null,
-      "label": "Assess material revision"
-    },
-    {
-      "hash": "0xbd24dc86f5970e820f492cb6714ff1c61ad4cae485caded299d0d61b0d2621e2",
-      "status": "FINALIZED",
-      "execution": "FINISHED_WITH_RETURN",
+      "label": "Register material clause",
       "contractAddress": null,
       "deployedContractSha256": null,
       "votes": {
         "0x14402D49f317CE1a2F35BAE01b1804A2A9703dCb": "agree",
-        "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100": "idle",
-        "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "agree",
-        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "agree",
-        "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658": "idle"
+        "0x4404Fb70d490c935758146f42A73DC850FF95C71": "idle",
+        "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47": "agree",
+        "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC": "idle",
+        "0xE6BD8050758CB15fC88387223E31Ae2708B119dC": "agree"
       },
-      "round": null,
-      "label": "Register live review clause"
+      "round": null
     },
     {
-      "hash": "0xda9acaf46957b344f9d070c61f9262c9e9e593e66e216f0298fdc2a621b1e3d5",
+      "hash": "0xa15b43e33eb6168d326e961f517347e8fe7eb606bf4cecb0e3fec2c2f201bf58",
       "status": "FINALIZED",
       "execution": "FINISHED_WITH_RETURN",
+      "label": "Open material commitment #1: PENDING v1",
       "contractAddress": null,
       "deployedContractSha256": null,
       "votes": {
-        "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100": "idle",
-        "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d": "agree",
-        "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "idle",
-        "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "agree",
-        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "agree"
+        "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "idle",
+        "0x3E5ee2507cc167C9925Bf10c67D7986581112024": "agree",
+        "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84": "agree",
+        "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree",
+        "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658": "idle"
       },
-      "round": null,
-      "label": "Open affected commitment #0"
+      "round": null
     },
     {
-      "hash": "0x87f292291abed02f5765f274fc32f9689d8f5dcce8a1d8f1fc47118822b5ffa6",
+      "hash": "0x7741b6b01e41bb5f49e4d8df9c0c7ecdb8c6475e47cd87707d5981c668548429",
       "status": "FINALIZED",
       "execution": "FINISHED_WITH_RETURN",
+      "label": "Propose material revision",
       "contractAddress": null,
       "deployedContractSha256": null,
       "votes": {
         "0x14402D49f317CE1a2F35BAE01b1804A2A9703dCb": "idle",
-        "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47": "agree",
-        "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC": "agree",
-        "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree",
-        "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658": "idle"
+        "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "agree",
+        "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "idle",
+        "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "agree",
+        "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree"
       },
-      "round": null,
-      "label": "Accept affected commitment #0"
+      "round": null
     },
     {
-      "hash": "0x40bf5d07bc7f653ee67c3afa8bc31d18955ecfed8b4d1ee725d9e588f6a10137",
+      "hash": "0x40d13de5b1997b88788d13cfbe8fe53b006fe6ea4d7e582aba192cb54a49190f",
       "status": "FINALIZED",
       "execution": "FINISHED_WITH_RETURN",
+      "label": "Assess MATERIAL: pending #1 enters REVIEW",
+      "contractAddress": null,
+      "deployedContractSha256": null,
+      "votes": {
+        "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
+        "0x14402D49f317CE1a2F35BAE01b1804A2A9703dCb": "agree",
+        "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "idle",
+        "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree",
+        "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d": "idle"
+      },
+      "round": null
+    },
+    {
+      "hash": "0x0931dee0b86b371e8fb04b8cfddb59c06892b313cb00b1f84a241ccfb7bd9088",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "label": "Steward consent: #1 stays REVIEW",
+      "contractAddress": null,
+      "deployedContractSha256": null,
+      "votes": {
+        "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "agree",
+        "0x3E5ee2507cc167C9925Bf10c67D7986581112024": "idle",
+        "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "agree",
+        "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "idle",
+        "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "agree"
+      },
+      "round": null
+    },
+    {
+      "hash": "0x71708a69d40f5435347d05dbfb4790af58851547d61aee37fc67c0186a45485b",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "label": "Reviewer accepts editorial #0 on v2",
       "contractAddress": null,
       "deployedContractSha256": null,
       "votes": {
         "0x3E5ee2507cc167C9925Bf10c67D7986581112024": "agree",
-        "0x4404Fb70d490c935758146f42A73DC850FF95C71": "idle",
         "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47": "agree",
-        "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
-        "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "idle"
-      },
-      "round": null,
-      "label": "Open unaffected commitment #1"
-    },
-    {
-      "hash": "0x87846a0c28c0ba52cf4206d0e560e686794ffc9414025a78b459e532387b93ab",
-      "status": "FINALIZED",
-      "execution": "FINISHED_WITH_RETURN",
-      "contractAddress": null,
-      "deployedContractSha256": null,
-      "votes": {
-        "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "agree",
-        "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "idle",
-        "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "agree",
-        "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "idle",
-        "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "agree"
-      },
-      "round": null,
-      "label": "Accept unaffected commitment #1"
-    },
-    {
-      "hash": "0xba683754d38b3b163228d9b4bfbb41eefcf3147282bf0198e67c60047b201d44",
-      "status": "FINALIZED",
-      "execution": "FINISHED_WITH_RETURN",
-      "contractAddress": null,
-      "deployedContractSha256": null,
-      "votes": {
-        "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC": "idle",
-        "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
-        "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree",
-        "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d": "agree",
-        "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "agree"
-      },
-      "round": null,
-      "label": "Propose live material revision"
-    },
-    {
-      "hash": "0x50e82772658a156d575ad5a57e2becc967d6dc7a763a9a17f67098f7e0800cf7",
-      "status": "FINALIZED",
-      "execution": "FINISHED_WITH_RETURN",
-      "contractAddress": null,
-      "deployedContractSha256": null,
-      "votes": {
-        "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "agree",
-        "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d": "idle",
-        "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "agree",
-        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "agree",
-        "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8": "idle"
-      },
-      "round": null,
-      "label": "Assess: affected REVIEW, unaffected ACTIVE"
-    },
-    {
-      "hash": "0x208ed5390f29d5192091cabc2bfb6e5ee4cdb911771fc474edabc749ee975ebc",
-      "status": "FINALIZED",
-      "execution": "FINISHED_WITH_RETURN",
-      "contractAddress": null,
-      "deployedContractSha256": null,
-      "votes": {
-        "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
-        "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "agree",
-        "0x4404Fb70d490c935758146f42A73DC850FF95C71": "agree",
-        "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "agree",
+        "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC": "agree",
+        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "idle",
         "0xcE1d6bBB36B744536153966B4DD42276f5ADd0F8": "agree"
       },
-      "round": null,
-      "label": "First consent: remains REVIEW"
+      "round": null
     },
     {
-      "hash": "0xaedc298b5af4b33a80348530496923a8c1a7cffced3b5f25f7cfaf63726b598e",
+      "hash": "0xe9e113ed962ff8995e01d3faff95b563a6633fb8ae759f79dbb1f0ffd288e8cd",
       "status": "FINALIZED",
       "execution": "ERROR",
-      "contractAddress": null,
-      "deployedContractSha256": null,
-      "votes": {
-        "0x14402D49f317CE1a2F35BAE01b1804A2A9703dCb": "agree",
-        "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "agree",
-        "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "idle",
-        "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "idle",
-        "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d": "agree"
-      },
-      "round": null,
-      "label": "Exercise during REVIEW: rejected"
-    },
-    {
-      "hash": "0x558bc0ddacc28f9db409ea4ec72e79016fe211c5cd2a6f8c84cf85514232cbd2",
-      "status": "FINALIZED",
-      "execution": "FINISHED_WITH_RETURN",
-      "contractAddress": null,
-      "deployedContractSha256": null,
-      "votes": {
-        "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
-        "0x4EDbE1FC9EAeC7b0EBA849b0C76AE73Eb0ad5C47": "agree",
-        "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
-        "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "agree",
-        "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree"
-      },
-      "round": null,
-      "label": "Second consent: returns ACTIVE"
-    },
-    {
-      "hash": "0x5492bd29042b2a94ecf78313dd019d20b1d6224b8c45adadd322cd83c172c638",
-      "status": "FINALIZED",
-      "execution": "FINISHED_WITH_RETURN",
-      "contractAddress": null,
-      "deployedContractSha256": null,
-      "votes": {
-        "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100": "agree",
-        "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "agree",
-        "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84": "agree",
-        "0x9ea87b28DcA2F79fe108CF06a4c13B4c876AC23d": "agree",
-        "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "agree"
-      },
-      "round": null,
-      "label": "Exercise once: records artifact digest"
-    },
-    {
-      "hash": "0xe7663509580cb5ff6e73e4bfb8df811a5490b50b8de810c7efa3cd0d2bd3b1af",
-      "status": "FINALIZED",
-      "execution": "FINISHED_WITH_RETURN",
-      "contractAddress": null,
-      "deployedContractSha256": null,
-      "votes": {
-        "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
-        "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC": "agree",
-        "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
-        "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree",
-        "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "agree"
-      },
-      "round": null,
-      "label": "Propose source without section markers"
-    },
-    {
-      "hash": "0xd81df39bcce54a220774326670722ffaa20782263caea40cdeb53f144aa94410",
-      "status": "FINALIZED",
-      "execution": "FINISHED_WITH_RETURN",
+      "label": "EXPECTED FAILURE: Reviewer cannot accept material #1 in REVIEW",
       "contractAddress": null,
       "deployedContractSha256": null,
       "votes": {
         "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "idle",
-        "0x3E5ee2507cc167C9925Bf10c67D7986581112024": "agree",
-        "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "idle",
-        "0xDB1c35c1f05d885999b8f13e5735307BcC16Be88": "agree",
-        "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658": "agree"
+        "0x3D83ab507785b95ca5C208bEc80CCe3D5ca98100": "idle",
+        "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "agree",
+        "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree",
+        "0xBBb165E4c9d73a1493D363280f7067Cd07891dBE": "agree"
       },
-      "round": null,
-      "label": "Assess: UNCLEAR and INCONCLUSIVE"
+      "round": null
+    },
+    {
+      "hash": "0x3d135924dc3846297f1c4d18d31fcc9128f8bcda9780445f9480d786b20fb586",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "label": "Reviewer consent: #1 ACTIVE on v2",
+      "contractAddress": null,
+      "deployedContractSha256": null,
+      "votes": {
+        "0x3E5ee2507cc167C9925Bf10c67D7986581112024": "agree",
+        "0x4aba638Cf0Cf5249437AaD968fC69dde46ae6BAC": "agree",
+        "0x5310dcF075E0BD47d29B8ec6581F736C767f54D2": "idle",
+        "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "agree",
+        "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84": "agree"
+      },
+      "round": null
     }
   ],
   "finalizedState": {
@@ -349,34 +239,9 @@
         "pendingUrl": "",
         "url": "https://raw.githubusercontent.com/ethereum/EIPs/5543b5cebb801cd49d42284a176031ac12dda826/EIPS/eip-1.md",
         "version": 2
-      },
-      {
-        "digest": "ca3effa9466c6accfdc96cbd6e9d24359aaa9b0110dbcfdffc6c7e29038ca749",
-        "id": "material-review-demo",
-        "lastNewDigest": "",
-        "lastOldDigest": "",
-        "lastVerdict": "UNCLEAR",
-        "pendingDeadline": 1792218553,
-        "pendingState": "INCONCLUSIVE",
-        "pendingUrl": "https://raw.githubusercontent.com/ethereum/EIPs/5543b5cebb801cd49d42284a176031ac12dda826/EIPS/eip-2.md",
-        "url": "https://raw.githubusercontent.com/ethereum/EIPs/5543b5cebb801cd49d42284a176031ac12dda826/EIPS/eip-1.md",
-        "version": 2
       }
     ],
     "commitments": [
-      {
-        "aConsent": true,
-        "artifactDigest": "6f453b274aea0c616bdcc6b9235722b39fa13a4b2c50e7c92f818933a2ac64f2",
-        "bConsent": true,
-        "boundUrl": "https://raw.githubusercontent.com/ethereum/EIPs/5543b5cebb801cd49d42284a176031ac12dda826/EIPS/eip-1.md",
-        "clauseId": "material-review-demo",
-        "exercisedAt": 1791959222,
-        "partyA": "0x106E2A74C9233e1981b0B5692355163A825F4422",
-        "partyB": "0xfbCD0A496d70FdE49760210a282714dfdA098b84",
-        "reviewDeadline": 0,
-        "status": "EXERCISED",
-        "version": 2
-      },
       {
         "aConsent": false,
         "artifactDigest": "",
@@ -389,33 +254,22 @@
         "reviewDeadline": 0,
         "status": "ACTIVE",
         "version": 2
+      },
+      {
+        "aConsent": true,
+        "artifactDigest": "",
+        "bConsent": true,
+        "boundUrl": "https://raw.githubusercontent.com/ethereum/EIPs/5543b5cebb801cd49d42284a176031ac12dda826/EIPS/eip-1.md",
+        "clauseId": "execution-spec-links",
+        "exercisedAt": 0,
+        "partyA": "0x106E2A74C9233e1981b0B5692355163A825F4422",
+        "partyB": "0xfbCD0A496d70FdE49760210a282714dfdA098b84",
+        "reviewDeadline": 0,
+        "status": "ACTIVE",
+        "version": 2
       }
     ],
     "steward": "0x106E2A74C9233e1981b0B5692355163A825F4422"
   },
-  "verifiedAt": "2026-10-14T06:31:44.853Z",
-  "scenarios": {
-    "editorial": {
-      "clauseId": "discussion-link-rule",
-      "expectedVerdict": "EDITORIAL",
-      "assessment": "0x8296535393190d237a552342df398f483076cb78bc6b9890cc27dc717d357071"
-    },
-    "material": {
-      "clauseId": "material-review-demo",
-      "expectedVerdict": "MATERIAL",
-      "assessment": "0x50e82772658a156d575ad5a57e2becc967d6dc7a763a9a17f67098f7e0800cf7",
-      "affectedCommitment": 0,
-      "unaffectedCommitment": 1
-    },
-    "reviewRejection": {
-      "transaction": "0xaedc298b5af4b33a80348530496923a8c1a7cffced3b5f25f7cfaf63726b598e",
-      "expectedExecution": "ERROR"
-    },
-    "inconclusive": {
-      "clauseId": "material-review-demo",
-      "expectedVerdict": "UNCLEAR",
-      "expectedPendingState": "INCONCLUSIVE",
-      "assessment": "0xd81df39bcce54a220774326670722ffaa20782263caea40cdeb53f144aa94410"
-    }
-  }
+  "verifiedAt": "2026-10-15T01:27:04.254Z"
 }

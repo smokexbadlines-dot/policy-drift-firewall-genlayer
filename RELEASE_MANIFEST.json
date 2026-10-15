@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "createdUtc": "2026-10-13T18:21:13.2249939Z",
   "contractSha256": "00bde2fa27b6dba0ca667d6eb7f77308c7a70b767586e5e4b19abf78fd3a1d4f",
-  "frontendBundleSha256": "292301c7f92bbaa0686750b62def136e48fb5c3c040d02124aa30b0762e1cd52",
+  "frontendBundleSha256": "9d8e43e843505d3c41dca4d33578606444dc7759e7c5cb26061c055d8a7c7d43",
   "runner": "py-genlayer:1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
   "sdk": "genlayer-js 1.1.8",
   "checks": {
@@ -50,11 +50,11 @@
     "https://raw.githubusercontent.com/ethereum/EIPs/b57b7e83fd92e4b6862bea447ee4b86db5c1f034/EIPS/eip-1.md",
     "https://raw.githubusercontent.com/ethereum/EIPs/60e2285dae7fcb7eda7befa32577085fdceb2255/EIPS/eip-1.md"
   ],
-  "updatedUtc": "2026-10-15T01:28:15.085Z",
+  "updatedUtc": "2026-10-15T07:30:18.119Z",
   "frontend": "https://policy-drift-firewall-genlayer.vercel.app/",
-  "vercelDeployment": "https://policy-drift-firewall-genlayer-5rhkjxg4r-smokexbadlines-1622.vercel.app/",
+  "vercelDeployment": "https://policy-drift-firewall-genlayer-n66l171t5-smokexbadlines-1622.vercel.app/",
   "githubPagesMirror": "https://smokexbadlines-dot.github.io/policy-drift-firewall-genlayer/",
-  "pagesBuildCommit": "7661569",
+  "pagesBuildCommit": "1711946",
   "pagesPublishingSource": "gh-pages",
   "repository": "https://github.com/smokexbadlines-dot/policy-drift-firewall-genlayer",
   "sourceCommit": "8781978ada97d9e20726f1d52af96e63ae0c9e43"

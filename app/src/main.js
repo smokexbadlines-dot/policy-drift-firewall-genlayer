@@ -24,9 +24,22 @@ const demo = {
 const raw = sha => `https://raw.githubusercontent.com/ethereum/EIPs/${sha}/EIPS/eip-1.md`;
 const assetBase = import.meta.env.BASE_URL;
 const studionetDemoAddress = '0x827B9F7aE69D78CA083d6B5195AA5323AB03dAf5';
+const legacyStudionetDemoAddress = '0xa02c1e164D8ce654f6f1F3f33Cb6061E75564a9F';
+function savedAddressFor(selectedNetwork) {
+  const key = `pdf-address-${selectedNetwork}`;
+  const saved = localStorage.getItem(key);
+  if (selectedNetwork === 'studionet'
+    && saved?.toLowerCase() === legacyStudionetDemoAddress.toLowerCase()
+    && !localStorage.getItem('pdf-studionet-v2-migrated')) {
+    localStorage.setItem(key, studionetDemoAddress);
+    localStorage.setItem('pdf-studionet-v2-migrated', '1');
+    return studionetDemoAddress;
+  }
+  return saved || (selectedNetwork === 'studionet' ? studionetDemoAddress : '');
+}
 const storedNetwork = localStorage.getItem('pdf-network');
 let network = networks[storedNetwork] ? storedNetwork : 'studionet';
-let address = localStorage.getItem(`pdf-address-${network}`) || (network === 'studionet' ? studionetDemoAddress : '');
+let address = savedAddressFor(network);
 let account = '';
 let client;
 let pending = [];
@@ -243,7 +256,7 @@ async function pollTransactions() {
 function bind() {
   document.querySelector('#network').addEventListener('change', event => {
     network = event.target.value; localStorage.setItem('pdf-network', network);
-    address = localStorage.getItem(`pdf-address-${network}`) || (network === 'studionet' ? studionetDemoAddress : '');
+    address = savedAddressFor(network);
     client = null; account = ''; data = null;
     try { pending = JSON.parse(localStorage.getItem(transactionStore()) || '[]'); } catch { pending = []; }
     page();

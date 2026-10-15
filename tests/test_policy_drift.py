@@ -74,6 +74,83 @@ def test_editorial_and_material_flow(direct_vm, win_deploy, direct_alice, direct
     assert state(contract)["commitments"][1]["status"] == "EXERCISED"
 
 
+def test_open_revise_then_accept_pending_commitments(direct_vm, win_deploy, direct_alice, direct_bob):
+    """A peer cannot activate an offer bound to an obsolete clause version."""
+    mock_sources(direct_vm)
+    direct_vm.mock_llm("Decide whether the text", '{"label":"CHECKABLE"}')
+    direct_vm.mock_llm("You compare two versions", '{"label":"EDITORIAL"}')
+    contract = win_deploy("contracts/policy_drift.py")
+    contract.register_clause("editorial", url(SHA_A), START, END)
+    assert direct_vm.run_validator()
+    contract.register_clause("material", url(SHA_A), START, END)
+    assert direct_vm.run_validator()
+    with direct_vm.prank(direct_alice):
+        assert contract.open_commitment("editorial", "0x" + direct_bob.hex()) == 0
+        assert contract.open_commitment("material", "0x" + direct_bob.hex()) == 1
+
+    contract.propose_revision("editorial", url(SHA_B))
+    contract.assess_revision("editorial")
+    assert direct_vm.run_validator()
+    editorial = state(contract)["commitments"][0]
+    assert editorial["status"] == "PENDING"
+    assert editorial["boundUrl"] == url(SHA_B)
+    assert editorial["version"] == 2
+    assert state(contract)["commitments"][1]["status"] == "PENDING"
+    assert state(contract)["commitments"][1]["version"] == 1
+    with direct_vm.prank(direct_bob):
+        contract.accept_commitment(0)
+    assert state(contract)["commitments"][0]["status"] == "ACTIVE"
+
+    direct_vm.clear_mocks()
+    mock_sources(direct_vm)
+    direct_vm.mock_llm("You compare two versions", '{"label":"MATERIAL"}')
+    contract.propose_revision("material", url(SHA_C))
+    contract.assess_revision("material")
+    assert direct_vm.run_validator()
+    material = state(contract)["commitments"][1]
+    assert material["status"] == "REVIEW"
+    assert material["boundUrl"] == url(SHA_A)
+    assert material["version"] == 1
+    with direct_vm.prank(direct_bob):
+        with direct_vm.expect_revert("peer acceptance required"):
+            contract.accept_commitment(1)
+    with direct_vm.prank(direct_alice):
+        contract.consent_to_revision(1)
+    assert state(contract)["commitments"][1]["status"] == "REVIEW"
+    with direct_vm.prank(direct_bob):
+        contract.consent_to_revision(1)
+    material = state(contract)["commitments"][1]
+    assert material["status"] == "ACTIVE"
+    assert material["boundUrl"] == url(SHA_C)
+    assert material["version"] == 2
+
+
+def test_accept_rejects_stale_url_or_version(direct_vm, win_deploy, direct_alice, direct_bob):
+    """Defend against a legacy or otherwise stale pending storage record."""
+    mock_sources(direct_vm)
+    direct_vm.mock_llm("Decide whether the text", '{"label":"CHECKABLE"}')
+    contract = win_deploy("contracts/policy_drift.py")
+    contract.register_clause("publication", url(SHA_A), START, END)
+    assert direct_vm.run_validator()
+    with direct_vm.prank(direct_alice):
+        contract.open_commitment("publication", "0x" + direct_bob.hex())
+
+    commitment = contract.commitments[0]
+    commitment.bound_url = url(SHA_B)
+    with direct_vm.prank(direct_bob):
+        with direct_vm.expect_revert("stale commitment version"):
+            contract.accept_commitment(0)
+    commitment.bound_url = url(SHA_A)
+    commitment.version = type(commitment.version)(2)
+    with direct_vm.prank(direct_bob):
+        with direct_vm.expect_revert("stale commitment version"):
+            contract.accept_commitment(0)
+    commitment.version = type(commitment.version)(1)
+    with direct_vm.prank(direct_bob):
+        contract.accept_commitment(0)
+    assert state(contract)["commitments"][0]["status"] == "ACTIVE"
+
+
 def test_source_failure_and_forged_leader(direct_vm, win_deploy):
     mock_sources(direct_vm)
     direct_vm.mock_llm("Decide whether the text", '{"label":"CHECKABLE"}')

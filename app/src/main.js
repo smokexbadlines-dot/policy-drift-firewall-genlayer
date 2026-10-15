@@ -23,7 +23,7 @@ const demo = {
 };
 const raw = sha => `https://raw.githubusercontent.com/ethereum/EIPs/${sha}/EIPS/eip-1.md`;
 const assetBase = import.meta.env.BASE_URL;
-const studionetDemoAddress = '0xa02c1e164D8ce654f6f1F3f33Cb6061E75564a9F';
+const studionetDemoAddress = '0x827B9F7aE69D78CA083d6B5195AA5323AB03dAf5';
 const storedNetwork = localStorage.getItem('pdf-network');
 let network = networks[storedNetwork] ? storedNetwork : 'studionet';
 let address = localStorage.getItem(`pdf-address-${network}`) || (network === 'studionet' ? studionetDemoAddress : '');
@@ -77,7 +77,7 @@ function page() {
       <section class="hero">
         <div class="hero-copy"><div class="eyebrow"><span class="pulse"></span> PUBLIC POLICY · PRIVATE AGREEMENT</div>
           <h1>When a rule changes,<br><em>your agreement knows.</em></h1>
-          <p>Bind a two-party commitment to a versioned public clause. Validators read both versions and judge whether a revision changes the rule. Code handles the rest: editorial updates advance; material updates pause the affected commitment until both parties consent.</p>
+          <p>Bind a two-party commitment to a versioned public clause. Validators read both versions and judge whether a revision changes the rule. Code handles the rest: editorial updates rebind pending and active commitments; material updates pause both until the parties consent.</p>
           <div class="hero-links"><a href="${assetBase}contract.py" download>Download contract source ↗</a><a href="https://docs.genlayer.com/developers/intelligent-contracts/first-contract" target="_blank" rel="noreferrer">How GenLayer contracts work ↗</a></div>
         </div>
         <div class="flow-card"><div class="flow-head"><span>01 / VERSION CONTROL</span><span class="live">DEMO BUILD</span></div>
@@ -104,7 +104,7 @@ function page() {
         <div class="section-heading"><div><span class="kicker">03 — OPERATE</span><h2>Move the agreement</h2></div><span class="fineprint">Transactions may take several minutes to finalize.</span></div>
         <div class="operations">
           <form class="card operation" data-method="register_clause"><span class="step">STEWARD</span><h3>Register a clause</h3><p>Fix a pinned policy version and a bounded section.</p><label>Clause ID<input name="clause_id" required maxlength="48" placeholder="publication-rule" /></label><label>Pinned raw GitHub URL<input name="url" required placeholder="https://raw.githubusercontent.com/…" /></label><div class="two"><label>Start marker<input name="start" required placeholder="## Rule" /></label><label>End marker<input name="end" required placeholder="## Next rule" /></label></div><button class="button" type="submit">Register clause</button></form>
-          <form class="card operation" data-method="open_commitment"><span class="step">PARTY A</span><h3>Open a commitment</h3><p>The other party accepts before the action is enabled.</p><label>Clause ID<input name="clause_id" required placeholder="publication-rule" /></label><label>Other party address<input name="other_party" required placeholder="0x…" /></label><button class="button" type="submit">Open commitment</button></form>
+          <form class="card operation" data-method="open_commitment"><span class="step">PARTY A</span><h3>Open a commitment</h3><p>The other party accepts before the action is enabled. A material revision during the offer requires both parties to consent to the new version.</p><label>Clause ID<input name="clause_id" required placeholder="publication-rule" /></label><label>Other party address<input name="other_party" required placeholder="0x…" /></label><button class="button" type="submit">Open commitment</button></form>
           <form class="card operation" data-method="propose_revision"><span class="step">STEWARD</span><h3>Propose a revision</h3><p>Assessment uses frozen old and new commit URLs.</p><label>Clause ID<input name="clause_id" required placeholder="publication-rule" /></label><label>New pinned raw URL<input name="new_url" required placeholder="https://raw.githubusercontent.com/…" /></label><button class="button" type="submit">Propose revision</button></form>
           <div class="card operation"><span class="step">ANY ACCOUNT / PARTIES</span><h3>Advance or resolve</h3><p>Use an ID from the state above. Consent must come from both wallets. Exercise binds one artifact hash and closes the commitment.</p><label>Clause ID<input id="action-clause" placeholder="publication-rule" /></label><label>Commitment ID<input id="action-id" type="number" min="0" step="1" placeholder="0" /></label><label>Artifact SHA-256 (for Exercise)<input id="artifact-digest" maxlength="64" placeholder="64 lowercase hex characters" /></label><label>Or hash a file locally<input id="artifact-file" type="file" /></label><div class="action-grid"><button class="button secondary" data-action="assess_revision">Assess</button><button class="button secondary" data-action="expire_revision">Expire proposal</button><button class="button secondary" data-action="accept_commitment">Accept</button><button class="button secondary" data-action="consent_to_revision">Consent</button><button class="button secondary" data-action="exercise">Exercise</button><button class="button secondary" data-action="exit_review">Exit review</button><button class="button secondary" data-action="expire_review">Expire review</button></div></div>
         </div>
@@ -130,7 +130,7 @@ function renderProof() {
   }
   const txs = proof.transactions || [];
   const labels = ['Deploy contract', 'Register editorial clause', 'Propose editorial revision', 'Assess editorial revision', 'Register material clause', 'Propose material revision', 'Assess material revision'];
-  panel.innerHTML = `<p class="fineprint">Snapshot verified ${escape(proof.verifiedAt || '—')} · Contract <a href="https://explorer-studio.genlayer.com" target="_blank" rel="noreferrer">${escape(proof.contract)}</a> · Source SHA-256 ${escape(proof.expectedContractSha256)}</p>
+  panel.innerHTML = `<p class="fineprint">Snapshot verified ${escape(proof.verifiedAt || '—')} · Contract <a href="https://explorer-studio.genlayer.com/address/${encodeURIComponent(proof.contract)}" target="_blank" rel="noreferrer">${escape(proof.contract)}</a> · Source SHA-256 ${escape(proof.expectedContractSha256)}</p>
     <p class="fineprint">Historical proof is recorded evidence. The clauses and commitments above are read from the latest finalized chain state.</p>
     ${txs.map((tx, i) => `<div class="tx"><div><strong>${escape(tx.label || labels[i] || 'Protocol transaction')}</strong><a class="hash-link" href="https://explorer-studio.genlayer.com/tx/${encodeURIComponent(tx.hash)}" target="_blank" rel="noreferrer" title="${escape(tx.hash)}">${escape(short(tx.hash))} ↗</a></div><div class="tx-right">${pill(tx.status)}<small>${escape(tx.execution || 'UNKNOWN')}</small></div></div>`).join('')}`;
 }

@@ -4,10 +4,10 @@
 
 **0:20–0:40 — The GenLayer mechanism.** Show the Studionet dashboard and its deployed address. A steward pins raw GitHub commit URLs and exact section markers. Validators independently fetch the sections, check their digests, and agree on a bounded `EDITORIAL`, `MATERIAL`, or `UNCLEAR` label. The contract applies the transition; the AI does not choose parties, actions, or money.
 
-**0:40–1:05 — Two baseline judgments.** Show the “Github” → “GitHub” excerpt and its `EDITORIAL` verdict. Show the changed execution specification test-link rule and its `MATERIAL` verdict. The proof panel links each finalized assessment to the explorer.
+**0:40–1:05 — Editorial pending offer.** Show the “Github” → “GitHub” excerpt and `EDITORIAL` verdict. Commitment 0 was opened `PENDING` on version 1, rebound to version 2 by the assessment, then accepted by Reviewer. It ends `ACTIVE` on version 2.
 
-**1:05–1:35 — Selective review, live.** Open the two commitments. In the live material assessment, commitment 0 entered `REVIEW`, while unrelated commitment 1 remained `ACTIVE`. Show the first consent leaving commitment 0 in review and the rejected exercise transaction with `FINALIZED / ERROR`. Then show second consent returning it to `ACTIVE` at version 2, followed by the successful artifact digest attestation and `EXERCISED` state.
+**1:05–1:40 — Material pending offer.** Commitment 1 was opened `PENDING` on version 1. The operative specification-link rule changed. Validators returned `MATERIAL`, and commitment 1 entered `REVIEW`; unrelated commitment 0 stayed usable. Show the first consent leaving it in review. The attempted `accept_commitment(1)` finalized with execution `ERROR` and did not activate it. The second consent activated it on version 2.
 
-**1:35–1:50 — Safe failure.** Show the pinned EIP-2 proposal. The file exists but lacks the frozen clause markers. Validators returned `UNCLEAR`; the proposal became `INCONCLUSIVE`, the current clause remained version 2, and no commitment changed.
+**1:40–1:50 — Why the guard matters.** The contract checks both bound URL and version before accepting any pending offer. A material revision does not leave the old offer pending; it moves it to review for explicit consent from both parties.
 
-**1:50–2:00 — Verification.** Show [the proof manifest](proof/studionet-live.json), 20 finalized transactions (19 successful, one expected blocked action), and run `cd app; pnpm verify:proof`. Finish with clause-scoped reconsent for existing commitments after an independently judged third-party policy revision.
+**1:50–2:00 — Verification.** Show [the proof manifest](proof/studionet-live.json), 13 finalized transactions (12 successful, one expected blocked acceptance), and run `cd app; pnpm verify:proof`. Finish with clause-scoped reconsent for pending and active commitments after an independently judged third-party policy revision.

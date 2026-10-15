@@ -2,7 +2,7 @@
 
 ## Mechanism
 
-Two parties bind a one-time onchain authorization to one clause of a public, versioned policy. The policy steward can propose a new pinned source. Validators independently fetch the old and new versions and judge one bounded question: does the changed clause alter a permission, prohibition, requirement, eligibility rule, or exception? Ordinary code then advances editorial revisions automatically or places affected commitments in REVIEW. A material change never silently rewrites an existing agreement: both parties must opt in to the new version, or the commitment expires after a fixed review deadline. Party B can exercise only while ACTIVE, binding a 64-character SHA-256 artifact digest and closing the commitment as EXERCISED.
+Two parties bind a one-time onchain authorization to one clause of a public, versioned policy. The policy steward can propose a new pinned source. Validators independently fetch the old and new versions and judge one bounded question: does the changed clause alter a permission, prohibition, requirement, eligibility rule, or exception? Ordinary code then rebinds pending and active commitments after editorial revisions or places both in REVIEW after material revisions. A material change never silently rewrites an existing agreement: both parties must opt in to the new version, or the commitment expires after a fixed review deadline. Acceptance also checks the pending offer's URL and version against the current clause. Party B can exercise only while ACTIVE, binding a 64-character SHA-256 artifact digest and closing the commitment as EXERCISED.
 
 This is a nonfinancial prototype. It issues a single-use, version-bound artifact attestation; it does not hold or transfer GEN. The useful invariant is that an editorial update can migrate an agreement, while a substantive update cannot bind either party without consent. A revision to one clause cannot pause an unrelated clause's agreements.
 
@@ -27,7 +27,7 @@ Both cases use Ethereum's public EIP-1 source file, pinned to commit SHAs:
 1. Editorial: `b57b7e83fd92e4b6862bea447ee4b86db5c1f034` to `36507828d1449d1265dd88730fb61fe2b3eb0cb8` changes “Github” to “GitHub” under `discussions-to`.
 2. Material: `60e2285dae7fcb7eda7befa32577085fdceb2255` to `5543b5cebb801cd49d42284a176031ac12dda826` replaces permitted execution-specification-test link rules.
 
-Expected demo: register two clauses and two commitments; the editorial update automatically advances one; the material update places the other in REVIEW; action under REVIEW fails; an unrelated ACTIVE commitment can still act; unilateral consent is insufficient; both-party consent reactivates the reviewed commitment. An invalid URL or prompt-injection fixture yields UNCLEAR. These are hypotheses until live finalized transactions and read-backs confirm them.
+The corrected live demo registered two clauses and opened two pending commitments. The editorial update rebound one pending offer to version 2 without activating it; the designated peer then accepted it. The material update moved the other pending offer to REVIEW. One consent left it there, an attempted peer acceptance finalized with execution ERROR, and the second consent activated it on version 2. The unrelated editorial commitment stayed usable. These results are recorded in [proof/studionet-live.json](proof/studionet-live.json).
 
 ## Close-match comparison
 
@@ -42,4 +42,4 @@ Two visible earlier user repositories have been compared. The current Portal coh
 
 ## Evidence and release gates
 
-Before live deployment: check raw byte caps, probe the exact sources from GenVM, probe runner deployment and one write/read, and lint/test contract code. For every demo transaction, record transaction ID, protocol status, execution result, votes, and read-back. Only FINALIZED with successful execution is proof. A change to deployed source requires a new deployment and new demonstration. Keep the repo private until the user explicitly approves public visibility; the human submits to the Portal.
+For every demo transaction, record transaction ID, protocol status, execution result, votes, and read-back. Only `FINALIZED` with successful execution proves a positive transition; a deliberate guard test is labeled as an expected `ERROR`. A change to deployed source requires a new deployment and new demonstration. The repository is public with the owner's prior authorization; the owner submits and replies in the Portal.

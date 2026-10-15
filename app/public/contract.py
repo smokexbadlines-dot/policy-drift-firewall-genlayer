@@ -228,6 +228,9 @@ class PolicyDriftFirewall(gl.Contract):
         commitment = self.commitments[self._commitment_index(commitment_id)]
         if gl.message.sender_address != commitment.party_b or commitment.status != PENDING:
             raise gl.vm.UserError("peer acceptance required")
+        clause = self.clauses[self._clause_index(commitment.clause_id)]
+        if commitment.bound_url != clause.current_url or commitment.version != clause.version:
+            raise gl.vm.UserError("stale commitment version")
         commitment.status = ACTIVE
 
     @gl.public.write
@@ -315,7 +318,7 @@ class PolicyDriftFirewall(gl.Contract):
         clause.pending_state = ""
         now = int(time.time())
         for commitment in self.commitments:
-            if commitment.clause_id != clause_id or commitment.status != ACTIVE:
+            if commitment.clause_id != clause_id or commitment.status not in (PENDING, ACTIVE):
                 continue
             if result["label"] == EDITORIAL:
                 commitment.bound_url = new_url
